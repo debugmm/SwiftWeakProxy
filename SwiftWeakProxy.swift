@@ -8,10 +8,10 @@
 
 import Foundation
 
-class SwiftWeakProxy: NSObject {
-    weak var target:NSObject?
+class SwiftWeakProxy: NSObject{
+    weak var target:NSObjectProtocol?
     
-    init(target:NSObject) {
+    init(target:NSObjectProtocol) {
         self.target=target
     }
     
