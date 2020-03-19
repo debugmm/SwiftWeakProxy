@@ -9,14 +9,14 @@
 import Foundation
 
 class SwiftWeakProxy: NSObject {
-    weak var target:AnyObject
+    weak var target:NSObject?
     
-    init(target:AnyObject) {
+    init(target:NSObject) {
         self.target=target
     }
     
     override func forwardingTarget(for aSelector: Selector!) -> Any? {
-        if(self.target.responds(to: aSelector)){
+        if(self.target?.responds(to: aSelector) ?? false){
             return self.target
         }
         
